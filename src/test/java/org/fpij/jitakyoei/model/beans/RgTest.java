@@ -1,6 +1,6 @@
 package test.java.org.fpij.jitakyoei.model.beans;
 
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertEquals;
 
 import org.fpij.jitakyoei.model.beans.Rg;
 import org.junit.Test;
@@ -9,13 +9,14 @@ import org.junit.Test;
 public class RgTest
 {
     @Test
-    public void verificarRgVazio() {
+    public void inserirRgValidoTest() {
+        // Initial Setup
+        Rg rg_teste = new Rg();        
+        String expected = "123456789";
 
-        // setup inicial
-        Rg rg_teste = new Rg();
-        
-        rg_teste.setNumero("106601507");
+        rg_teste.setNumero("123456789");
+        String curr_value = rg_teste.getNumero();
 
-        assertNotEquals(rg_teste.getNumero(), "");
+        assertEquals(expected, curr_value);
     }
 }
